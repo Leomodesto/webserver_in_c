@@ -5,6 +5,10 @@
 
 #include <stdio.h>
 #include <Winsock2.h>
+#include <ws2tcpip.h>
+#include <socket.h> 
+#include <netinet/in.h>
+
 struct Server
 {
     int domain;
@@ -16,14 +20,16 @@ struct Server
 
     struct sockaddr_in address;
 
-    void (*launch)(void);
+    int socket;
 
+    void (*launch)(struct Server *server);
 
+    
     
     
 };
 
-struct Server server_constructor(int domain, int service, int protocol, u_long interfaces, int port, int backlog, void (*launch) (void));
+struct Server server_constructor(int domain, int service, int protocol, u_long interfaces, int port, int backlog, void (*launch) (struct Server *server));
 
 
 
