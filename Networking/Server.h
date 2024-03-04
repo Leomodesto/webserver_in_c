@@ -4,9 +4,9 @@
 
 
 #include <stdio.h>
-#include <Winsock2.h>
-#include <ws2tcpip.h>
-#include <socket.h> 
+//#include <Winsock2.h>
+//#include <ws2tcpip.h>
+#include <sys/socket.h> 
 #include <netinet/in.h>
 
 struct Server
